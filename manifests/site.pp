@@ -25,7 +25,7 @@ user { "aidan":
 }
 
 ssh_authorized_key { "Aidan login key":
-  require  => User["aidan"],
+  require  => File["/home/aidan"],
   ensure   => "present",
   type     => "ssh-rsa",
   key      => "AAAAB3NzaC1yc2EAAAABIwAAAQEAsdlYmaL4nbBzRF48+5uCFDFMgfCVANzahbun2ZxyHHX1f8ab+MmKWxfL85/NnYEtp7caZf6OvcXXpG7uIywQJURSiDS4oqw27c5Kos4wbB99CPnWtQU8VgXodg8u+X4Ea1eHosSivb3Urjl73DlVPtjV+OwC+PVyZ0+U862F0tXO059F9S6qxZ2r+ZeZkOMLLUsWpm5M+8OZ44a9joHKRe2q5EodXOVCc0twoHXvL2hfykIwL0y3nMipJMDUNfFPv6cyvm6+NOamxS/1R2o+uHcFeAFFFErBbuXyMCdpvpgCWQwG2PuCSQz+sN7i4qv3o3WGhXcbBXZvq9N5DsSmKQ==",
