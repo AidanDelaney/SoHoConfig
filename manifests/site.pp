@@ -4,11 +4,6 @@ package{ "exim4-config":
   ensure => "installed"
 }
 
-file {'/etc/hostname':
-  ensure  => present,
-  content => "phoric.eu",
-}
-
 group { "puppet":
    ensure => "present",
 }
