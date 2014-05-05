@@ -9,6 +9,7 @@ group { "puppet":
 }
 
 file { "/home/aidan":
+  require => User["aidan"],
   ensure => "directory",
   owner  => "aidan",
   group  => "aidan",
@@ -16,7 +17,6 @@ file { "/home/aidan":
 }
 
 user { "aidan":
-  require  => File["/home/aidan/"],
   name     => "aidan",
   ensure   => "present",
   comment  => "Aidan Delaney",
