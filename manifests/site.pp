@@ -16,12 +16,20 @@ file { "/home/aidan":
   mode   => 755
 }
 
+file { "/home/aidan/www":
+  require => File["/home/aidan"],
+  ensure => "directory",
+  owner  => "aidan",
+  group  => "aidan",
+  mode   => 755
+}
+
 user { "aidan":
   name     => "aidan",
   ensure   => "present",
   comment  => "Aidan Delaney",
   home     => "/home/aidan",
-  password => str2saltedsha512("open123"),
+  password => str2saltedsha512("open123"), # obviously an example
 }
 
 ssh_authorized_key { "Aidan login key":
